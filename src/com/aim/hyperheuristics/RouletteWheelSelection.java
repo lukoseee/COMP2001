@@ -135,10 +135,12 @@ public class RouletteWheelSelection {
 	 * @return A heuristic based on the RWS method.
 	 */
 	public HeuristicPair performRouletteWheelSelection() {
+
 		int total = getTotalScore();
 		int random = rng.nextInt(total);
 		int cumulativeScore = 0;
 		int index = 0;
+
 		HeuristicPair h = m_aoHeuristicPairs[index];
 
 		while(cumulativeScore < random)

@@ -21,7 +21,7 @@ import java.util.Random;
  */
 public class AdjacentSwap extends HeuristicOperators implements HeuristicInterface {
 
-	public AdjacentSwap(Random random , SightseeingProblemDomain problemDomain) {
+	public AdjacentSwap(Random random) {
 
 		super(random);
 

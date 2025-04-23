@@ -22,7 +22,7 @@ import com.google.common.collect.TreeRangeMap;
 public class Reinsertion extends HeuristicOperators implements HeuristicInterface {
 	
 
-	public Reinsertion(Random random , SightseeingProblemDomain problemDomain) {
+	public Reinsertion(Random random) {
 
 		super(random);
 

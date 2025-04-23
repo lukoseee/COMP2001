@@ -21,7 +21,7 @@ import com.google.common.collect.TreeRangeMap;
 public class NextDescent extends HeuristicOperators implements HeuristicInterface {
 
 
-	public NextDescent(Random random , SightseeingProblemDomain problemDomain) {
+	public NextDescent(Random random) {
 	
 		super(random);
 

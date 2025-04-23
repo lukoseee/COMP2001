@@ -39,19 +39,19 @@ public class SightseeingProblemDomain extends ProblemDomain implements Visualisa
 
 	private SSPSolutionInterface initialSolution;
 
-	private final HeuristicInterface[] heuristics;
+	public final HeuristicInterface[] heuristics;
 
 	public SightseeingProblemDomain(long seed ) {
 
         super(seed);
 
-		AdjacentSwap adjacentSwap = new AdjacentSwap(rng , this);
+		AdjacentSwap adjacentSwap = new AdjacentSwap(rng );
 		DavissHillClimbing hillClimbing = new DavissHillClimbing(rng);
-		NextDescent nextDescent = new NextDescent(rng,this);
+		NextDescent nextDescent = new NextDescent(rng);
 		OX ox = new OX(rng);
-		Reinsertion reinsertion = new Reinsertion(rng, this);
+		Reinsertion reinsertion = new Reinsertion(rng);
 		PMX pmx = new PMX(rng);
-		Exchange exchange = new Exchange(rng , this);
+		Exchange exchange = new Exchange(rng);
 		SimulatedAnnealing simulatedAnnealing = new SimulatedAnnealing(rng);
 
 		heuristics = new HeuristicInterface[8];
@@ -65,12 +65,10 @@ public class SightseeingProblemDomain extends ProblemDomain implements Visualisa
 		heuristics[6] = exchange;
 		heuristics[7] = simulatedAnnealing;
 
-		setMemorySize(8); //number of heuristics;
+		setMemorySize(3);
 
 		loadedInstances = new ArrayList<SSPInstanceInterface>();
 
-        // TODO - set default memory size and create the array of low-level heuristics
-		// ...
 		instanceIDs = new LinkedHashMap<Integer, String>();
 
 		instanceIDs.put(0 , "instances/ssp/square.ssp");
@@ -96,7 +94,6 @@ public class SightseeingProblemDomain extends ProblemDomain implements Visualisa
 	{
 		this.mode = mode;
 	}
-
 
 	@Override
 	public double applyHeuristic(int hIndex, int currentIndex, int candidateIndex) {

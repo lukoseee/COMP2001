@@ -12,10 +12,11 @@ import AbstractClasses.ProblemDomain;
  * Can be used for testing your initialisation method.
  */
 public class InitialisationTest_HH extends HyperHeuristic {
-	
+
 	public InitialisationTest_HH(long seed) {
 		
 		super(seed);
+
 	}
 
 	@Override

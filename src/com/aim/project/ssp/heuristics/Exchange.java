@@ -12,7 +12,7 @@ import java.util.Random;
 
 public class Exchange extends HeuristicOperators implements HeuristicInterface {
 
-    public Exchange(Random random, SightseeingProblemDomain problemDomain) {
+    public Exchange(Random random ) {
 
         super(random);
 

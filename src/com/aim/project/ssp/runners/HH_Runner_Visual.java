@@ -21,11 +21,11 @@ import AbstractClasses.HyperHeuristic;
 public abstract class HH_Runner_Visual {
 
 	private final long competitionSeconds = 30;
-	private final long machineMilliseconds = 300_000;
+	private final long machineMilliseconds = 138_000;
 
 	private long[] SEEDS;
 
-	private final int TOTAL_RUNS = 5;
+	private final int TOTAL_RUNS = 3;
 
     protected HH_Runner_Visual() {
         SEEDS = generateSeeds();
@@ -61,7 +61,7 @@ public abstract class HH_Runner_Visual {
 				problem = new SightseeingProblemDomain(seeds); //use same seed
 
 				problem.loadInstance(instance); //load first instance
-				problem.setMode(InitialisationMode.RANDOM);
+				problem.setMode(InitialisationMode.CONSTRUCTIVE);
 
 				hh = getHyperHeuristic(seeds);
 				hh.setTimeLimit(timeLimit);
@@ -90,7 +90,8 @@ public abstract class HH_Runner_Visual {
 
 	public long getRuntime()
 	{
-		return (machineMilliseconds * competitionSeconds) / 600;
+		//long nominalMillisecondsPerRun = (5 * 60) / TOTAL_RUNS;
+		return (machineMilliseconds * competitionSeconds) / 300;
 	}
 
 	/**
